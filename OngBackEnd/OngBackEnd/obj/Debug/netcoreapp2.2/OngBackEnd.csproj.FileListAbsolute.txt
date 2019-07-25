@@ -1,0 +1,14 @@
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\bin\Debug\netcoreapp2.2\OngBackEnd.deps.json
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\bin\Debug\netcoreapp2.2\OngBackEnd.runtimeconfig.json
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\bin\Debug\netcoreapp2.2\OngBackEnd.runtimeconfig.dev.json
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\bin\Debug\netcoreapp2.2\OngBackEnd.dll
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\bin\Debug\netcoreapp2.2\OngBackEnd.pdb
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.csprojAssemblyReference.cache
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.csproj.CoreCompileInputs.cache
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.RazorAssemblyInfo.cache
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.RazorAssemblyInfo.cs
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.AssemblyInfoInputs.cache
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.AssemblyInfo.cs
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.RazorTargetAssemblyInfo.cache
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.dll
+C:\Users\Taller\source\repos\OngBackEnd\OngBackEnd\obj\Debug\netcoreapp2.2\OngBackEnd.pdb
