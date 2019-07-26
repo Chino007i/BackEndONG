@@ -16,5 +16,9 @@ namespace OngBackEnd.Models
         [ForeignKey ("Grado")]
         public int IdGrado { get; set; }
         public GradoModel Grado { get; set; }
+
+        [ForeignKey ("GradoMaestro")]
+        public int IdGradoMaestro { get; set; }
+        public GradoMaestroModel GradoMaestro { get; set; }
     }
 }

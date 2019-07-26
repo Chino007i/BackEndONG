@@ -54,9 +54,13 @@ namespace OngBackEnd.Migrations
 
                     b.Property<int>("IdGrado");
 
+                    b.Property<int>("IdGradoMaestro");
+
                     b.HasKey("IdAsignatura");
 
                     b.HasIndex("IdGrado");
+
+                    b.HasIndex("IdGradoMaestro");
 
                     b.ToTable("Asignaturas");
                 });
@@ -222,6 +226,11 @@ namespace OngBackEnd.Migrations
                     b.HasOne("OngBackEnd.Models.GradoModel", "Grado")
                         .WithMany()
                         .HasForeignKey("IdGrado")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OngBackEnd.Models.GradoMaestroModel", "GradoMaestro")
+                        .WithMany()
+                        .HasForeignKey("IdGradoMaestro")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
