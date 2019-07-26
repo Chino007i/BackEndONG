@@ -15,11 +15,11 @@ namespace OngBackEnd.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("OngBackEnd.Models.Alumno", b =>
+            modelBuilder.Entity("OngBackEnd.Models.AlumnoModel", b =>
                 {
                     b.Property<int>("IdAlumno")
                         .ValueGeneratedOnAdd()
@@ -44,37 +44,24 @@ namespace OngBackEnd.Migrations
                     b.ToTable("Alumnos");
                 });
 
-            modelBuilder.Entity("OngBackEnd.Models.Asignatura", b =>
+            modelBuilder.Entity("OngBackEnd.Models.AsignaturaModel", b =>
                 {
                     b.Property<int>("IdAsignatura")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Asignatur");
+                    b.Property<string>("Asignatura");
 
                     b.Property<int>("IdGrado");
 
                     b.HasKey("IdAsignatura");
 
+                    b.HasIndex("IdGrado");
+
                     b.ToTable("Asignaturas");
                 });
 
-            modelBuilder.Entity("OngBackEnd.Models.Grado", b =>
-                {
-                    b.Property<int>("IdGrado")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Grados");
-
-                    b.Property<string>("Jornada");
-
-                    b.HasKey("IdGrado");
-
-                    b.ToTable("Grados");
-                });
-
-            modelBuilder.Entity("OngBackEnd.Models.GradoMaestro", b =>
+            modelBuilder.Entity("OngBackEnd.Models.GradoMaestroModel", b =>
                 {
                     b.Property<int>("IdGrado")
                         .ValueGeneratedOnAdd()
@@ -89,11 +76,28 @@ namespace OngBackEnd.Migrations
                     b.ToTable("GradoMaestros");
                 });
 
-            modelBuilder.Entity("OngBackEnd.Models.HistorialAc", b =>
+            modelBuilder.Entity("OngBackEnd.Models.GradoModel", b =>
                 {
-                    b.Property<int>("IdAlumno")
+                    b.Property<int>("IdGrado")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Grado");
+
+                    b.Property<string>("Jornada");
+
+                    b.HasKey("IdGrado");
+
+                    b.ToTable("Grados");
+                });
+
+            modelBuilder.Entity("OngBackEnd.Models.HistorialAcModel", b =>
+                {
+                    b.Property<int>("IdHistoriaAc")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IdAlumno");
 
                     b.Property<int>("IdSemestre");
 
@@ -101,12 +105,35 @@ namespace OngBackEnd.Migrations
 
                     b.Property<string>("Observaciones");
 
-                    b.HasKey("IdAlumno");
+                    b.HasKey("IdHistoriaAc");
+
+                    b.HasIndex("IdAlumno");
+
+                    b.HasIndex("IdSemestre");
 
                     b.ToTable("HistorialAcs");
                 });
 
-            modelBuilder.Entity("OngBackEnd.Models.Maestro", b =>
+            modelBuilder.Entity("OngBackEnd.Models.MaestroAsignaturaModel", b =>
+                {
+                    b.Property<int>("IdMaestroAsignatura")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IdAsignatura");
+
+                    b.Property<int>("IdMaestro");
+
+                    b.HasKey("IdMaestroAsignatura");
+
+                    b.HasIndex("IdAsignatura");
+
+                    b.HasIndex("IdMaestro");
+
+                    b.ToTable("MaestroAsignaturas");
+                });
+
+            modelBuilder.Entity("OngBackEnd.Models.MaestroModel", b =>
                 {
                     b.Property<int>("IdMaestro")
                         .ValueGeneratedOnAdd()
@@ -127,28 +154,17 @@ namespace OngBackEnd.Migrations
                     b.ToTable("Maestros");
                 });
 
-            modelBuilder.Entity("OngBackEnd.Models.MaestroAsignatura", b =>
+            modelBuilder.Entity("OngBackEnd.Models.NotaModel", b =>
                 {
-                    b.Property<int>("IdMaestro")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("IdAsignatura");
-
-                    b.HasKey("IdMaestro");
-
-                    b.ToTable("MaestroAsignaturas");
-                });
-
-            modelBuilder.Entity("OngBackEnd.Models.Nota", b =>
-                {
-                    b.Property<int>("IdSemestre")
+                    b.Property<int>("IdNota")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("IdAlumno");
 
                     b.Property<int>("IdAsignatura");
+
+                    b.Property<int>("IdSemestre");
 
                     b.Property<int>("NotaAcum");
 
@@ -164,35 +180,93 @@ namespace OngBackEnd.Migrations
 
                     b.Property<int>("Total");
 
-                    b.HasKey("IdSemestre");
+                    b.HasKey("IdNota");
+
+                    b.HasIndex("IdAlumno");
+
+                    b.HasIndex("IdAsignatura");
+
+                    b.HasIndex("IdSemestre");
 
                     b.ToTable("Notas");
                 });
 
-            modelBuilder.Entity("OngBackEnd.Models.Rol", b =>
+            modelBuilder.Entity("OngBackEnd.Models.RolModel", b =>
                 {
                     b.Property<int>("IdRol")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("TRol");
+                    b.Property<string>("Rol");
 
                     b.HasKey("IdRol");
 
                     b.ToTable("Rols");
                 });
 
-            modelBuilder.Entity("OngBackEnd.Models.Semestre", b =>
+            modelBuilder.Entity("OngBackEnd.Models.SemestreModel", b =>
                 {
                     b.Property<int>("IdSemestre")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("NSemestre");
+                    b.Property<int>("Semestre");
 
                     b.HasKey("IdSemestre");
 
                     b.ToTable("Semestres");
+                });
+
+            modelBuilder.Entity("OngBackEnd.Models.AsignaturaModel", b =>
+                {
+                    b.HasOne("OngBackEnd.Models.GradoModel", "Grado")
+                        .WithMany()
+                        .HasForeignKey("IdGrado")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("OngBackEnd.Models.HistorialAcModel", b =>
+                {
+                    b.HasOne("OngBackEnd.Models.AlumnoModel", "Alumno")
+                        .WithMany()
+                        .HasForeignKey("IdAlumno")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OngBackEnd.Models.SemestreModel", "Semestre")
+                        .WithMany()
+                        .HasForeignKey("IdSemestre")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("OngBackEnd.Models.MaestroAsignaturaModel", b =>
+                {
+                    b.HasOne("OngBackEnd.Models.AsignaturaModel", "Asignatura")
+                        .WithMany()
+                        .HasForeignKey("IdAsignatura")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OngBackEnd.Models.MaestroModel", "Maestro")
+                        .WithMany()
+                        .HasForeignKey("IdMaestro")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("OngBackEnd.Models.NotaModel", b =>
+                {
+                    b.HasOne("OngBackEnd.Models.AlumnoModel", "Alumno")
+                        .WithMany()
+                        .HasForeignKey("IdAlumno")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OngBackEnd.Models.AsignaturaModel", "Asignatura")
+                        .WithMany()
+                        .HasForeignKey("IdAsignatura")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("OngBackEnd.Models.SemestreModel", "Semestre")
+                        .WithMany()
+                        .HasForeignKey("IdSemestre")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

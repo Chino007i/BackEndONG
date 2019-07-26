@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Taller\\source\\repos\\OngBackEnd\\OngBackEnd\\OngBackEnd.csproj": {}
+    "C:\\Users\\USER\\Documents\\BackEndONG\\OngBackEnd\\OngBackEnd\\OngBackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Taller\\source\\repos\\OngBackEnd\\OngBackEnd\\OngBackEnd.csproj": {
+    "C:\\Users\\USER\\Documents\\BackEndONG\\OngBackEnd\\OngBackEnd\\OngBackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Taller\\source\\repos\\OngBackEnd\\OngBackEnd\\OngBackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Documents\\BackEndONG\\OngBackEnd\\OngBackEnd\\OngBackEnd.csproj",
         "projectName": "OngBackEnd",
-        "projectPath": "C:\\Users\\Taller\\source\\repos\\OngBackEnd\\OngBackEnd\\OngBackEnd.csproj",
-        "packagesPath": "C:\\Users\\Taller\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Taller\\source\\repos\\OngBackEnd\\OngBackEnd\\obj\\",
+        "projectPath": "C:\\Users\\USER\\Documents\\BackEndONG\\OngBackEnd\\OngBackEnd\\OngBackEnd.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER\\Documents\\BackEndONG\\OngBackEnd\\OngBackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Taller\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,9 +68,9 @@
               "version": "[2.2.0, )",
               "autoReferenced": true
             },
-            "PowerShell": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.2.2, )"
+              "version": "[2.2.3, )"
             }
           },
           "imports": [
